@@ -20,6 +20,4 @@ A toolkit for automatic mouse sensitivity detection and normalization in WebGL g
 | **eDPI**     | Effective DPI (DPI × in-game sens)   | 400-3200             |
 | **Yaw**      | Horizontal turn speed (degrees/count)| 0.022° (Quake/CS:GO) |
 
-### Installation
-```bash
-npm install webgl-mouse-sensitivity
+
