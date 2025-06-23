@@ -12,3 +12,15 @@
 1. [Professional eSports Sensitivity Database](https://prosettings.net/)
 2. [Unreal Engine Input Documentation](https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/Input/)
 3. [Unity First-Person Controller Sensitivity](https://docs.unity3d.com/Manual/class-InputManager.html)
+
+
+@misc{Mouse-Sensitivity-Detect
+,
+  author = {Talent 7 Gaming Squad},
+  title = {Mouse-Sensitivity-Detect
+ },
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/Talent7-source/Mouse-Sensitivity-Detect}}
+}
