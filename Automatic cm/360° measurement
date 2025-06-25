@@ -1,0 +1,45 @@
+
+### cm/360° Calculation
+
+``cm/360° = (360 / (Yaw Sensitivity × Mouse CPI)) × 2.54``
+
+### Sensitivity Conversion
+``In-Game Sensitivity = (Counts Per 360° / Mouse CPI) / 360``
+
+## Implementation
+```javascript
+export class DPICalculator {
+  /**
+   * Convert between sensitivity formats
+   * @param {number} value - Input value
+   * @param {'cm360'|'edpi'|'ingame'} from 
+   * @param {'cm360'|'edpi'|'ingame'} to 
+   * @param {object} context - { mouseDPI, yaw }
+   */
+  static convert(value, from, to, context) {
+    const conversions = {
+      'cm360_to_edpi': cm => (360 / (context.yaw * cm)) * 2.54,
+      'edpi_to_cm360': edpi => (360 / (context.yaw * edpi)) * 2.54,
+      'ingame_to_edpi': sens => sens * context.mouseDPI
+    };
+    
+    const key = `${from}_to_${to}`;
+    return conversions[key]?.(value) || value;
+  }
+
+  /**
+   * Estimate DPI from movement samples
+   * @param {Array} movements - [{ pixelsMoved, physicalDistanceCM }]
+   */
+  static estimateDPI(movements) {
+    const total = movements.reduce((sum, m) => {
+      return sum + (m.pixelsMoved / (m.physicalDistanceCM / 2.54));
+    }, 0);
+    return Math.round(total / movements.length);
+  }
+}
+
+
+### refrence
+``https://www.mouse-sensitivity.com/``
+
