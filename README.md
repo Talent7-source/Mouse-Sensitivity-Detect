@@ -7,7 +7,7 @@ A toolkit for automatic mouse sensitivity detection and normalization in WebGL g
 - 🎯 Automatic cm/360° measurement
 - 🖱️ DPI-agnostic sensitivity calculation
 - 🎮 Perspective camera-adapted detection
-- 📊 Sensitivity profile generation
+
 
 ## Core Concepts
 
